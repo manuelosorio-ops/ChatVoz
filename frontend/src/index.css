@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* ---------- Orbe de Cami ---------- */
+@keyframes cami-breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.04); }
+}
+@keyframes cami-ripple {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+@keyframes cami-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes cami-bar {
+  0%, 100% { transform: scaleY(0.35); }
+  50%      { transform: scaleY(1); }
+}
+
+.orb-breathe  { animation: cami-breathe 4s ease-in-out infinite; }
+.orb-ripple   { animation: cami-ripple 2.2s cubic-bezier(0.2, 0.6, 0.4, 1) infinite; }
+.orb-spin     { animation: cami-spin 1.4s linear infinite; }
+.orb-bar      { animation: cami-bar 0.9s ease-in-out infinite; transform-origin: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-breathe, .orb-ripple, .orb-spin, .orb-bar { animation: none; }
+}
+
+/* Scroll discreto para el historial */
+.chat-scroll::-webkit-scrollbar { width: 6px; }
+.chat-scroll::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.12); border-radius: 9999px; }

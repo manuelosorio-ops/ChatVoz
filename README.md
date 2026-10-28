@@ -32,7 +32,19 @@ ChatVoz/
             └── CamiOrb.jsx   # Orbe animado por estado
 ```
 
-## Levantar en local
+## Levantar en local (un solo comando)
+
+Desde la raíz de `ChatVoz/`:
+
+```bash
+./dev.sh             # instala lo que falte y levanta backend (:8000) + frontend (:5173)
+./dev.sh --install   # fuerza reinstalar dependencias
+```
+
+La primera vez crea `backend/.venv`, instala dependencias y, si no existe, `backend/.env` (agrega ahí tu clave).
+Los logs salen en la misma terminal con prefijo `[back]` y `[front]`. `Ctrl+C` detiene ambos.
+
+## Levantar en local (por separado)
 
 Requisitos: Python 3.10+, Node 18+ y **Chrome o Edge** (la Web Speech API de reconocimiento no está en Firefox).
 
